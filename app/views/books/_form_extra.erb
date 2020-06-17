@@ -1,0 +1,18 @@
+
+<h1>Pide un libro que no encuentres</h1>
+<br>  
+<%= form_with(model: @book, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Pedir', method:  , data: {disable_with: 'Procesando su solicitud...'} %>
+  </div>
+<% end %>

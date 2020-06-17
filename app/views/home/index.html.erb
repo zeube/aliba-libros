@@ -1,0 +1,28 @@
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Description</th>
+      <th>Stock</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @reservations.each do |reserva| %>
+      <tr id='fila<%= reserva.id %>'>
+        <td><%= reserva.book.title %></td>
+        <td><%= reserva.book.author %></td>
+        <td><%= reserva.book.description %></td>
+        <td><%= reserva.book.stock %></td>
+        <td><%= reserva.book.price %></td>
+        <td><%= link_to 'Destroy', book_reservation_path(reserva.book, reserva), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
